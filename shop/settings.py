@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # my apps
     'applications.product',
+    'applications.account',
 
     # modules
     'rest_framework',
@@ -83,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shop',
-        'USER': 'vlad',
+        'USER': 'ademi',
         'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432
@@ -134,3 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+AUTH_USER_MODEL = 'account.CustomUser'
+
