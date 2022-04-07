@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # modules
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -145,12 +146,18 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 2,
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permission.IsAuthenticated'  # AllowAny
+    # ],
 }
 
 AUTH_USER_MODEL = 'account.CustomUser'  # current user
@@ -158,7 +165,7 @@ AUTH_USER_MODEL = 'account.CustomUser'  # current user
 EMAIL_BACKEND = 'EMAIL_BACKEND'
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')  #защищенность
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')  # защищенность
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 

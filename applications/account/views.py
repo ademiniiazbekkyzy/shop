@@ -13,6 +13,7 @@ User = get_user_model()
 
 
 class RegisterApiView(APIView):
+    # permission_classes = [AllowAny]
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
